@@ -18,7 +18,7 @@ jobs:
         with:
           distribution: 'temurin' # This will use OpenJDK java distribution. Look into the `actions/setup-java@v3` github page for more info and options
           java-version: 18
-          cache: 'gradle' #This assumes you use gradle. If you use differnet build system, check out the `actions/setup-java@v3` GitHub page
+          cache: 'gradle' #This assumes you use gradle. If you use different build system, check out the `actions/setup-java@v3` GitHub page
 
       - name: Grand execute permissions to gradlew
         run: chmod +x gradlew
@@ -28,7 +28,7 @@ jobs:
 
   apk:
     name: Generate APK
-    needs: Unit testing
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -49,7 +49,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: app-debug
-          path: app/build/outputs/apk/debug/app-debug.apk #This path might be differnt on your side especially if you have flavors. Look in your side what is the correct dir.
+          path: app/build/outputs/apk/debug/app-debug.apk #This path might be different on your side especially if you have flavors. Look in your side what is the correct dir.
 
       - name: Assemble app instrumentation tests
         run: ./gradlew assembleDebugAndroidTest #This command might differ on your side, especially if you have flavors. Test it out locally, or run `./gradlew tasks` to see what you need.
@@ -93,7 +93,7 @@ jobs:
       - name: Run instrumentation tests in Firebase Test Lab
         run: gcloud firebase test android run --type instrumentation --app app-debug/app-debug.apk --test app-debug-androidTest/app-debug-androidTest.apk --device model=blueline,version=28
         # For the command above: the targeting device `model=blueline,version=28` might not be available at the time you are writing this script. It is a matter to change on the firebase side, so you have to look what is available there.
-        # Also, make sure the apk files and directories are correct, they might be differnt on your side depending on the project setup (names, modules, flavors).
+        # Also, make sure the apk files and directories are correct, they might be different on your side depending on the project setup (names, modules, flavors).
 
   distribute:
     name: Distribute app bundle to Play Store
