@@ -16,7 +16,9 @@ fun launchingSignupScreen(
     return SignupRoboto(rule).apply(block)
 }
 
-class SignupRoboto(private val rule: AndroidComposeTestRule<ActivityScenarioRule<MainActivity>, MainActivity>) {
+class SignupRoboto(
+    private val rule: AndroidComposeTestRule<ActivityScenarioRule<MainActivity>, MainActivity>
+) {
     fun typeEmail(email: String) {
         val emailHint = rule.activity.getString(R.string.label_hint_email)
         rule.onNodeWithText(emailHint)
@@ -35,8 +37,8 @@ class SignupRoboto(private val rule: AndroidComposeTestRule<ActivityScenarioRule
             .performClick()
     }
 
-    infix fun verify(block: SignUpVerification.() -> Unit):SignUpVerification {
-       return SignUpVerification(rule).apply(block)
+    infix fun verify(block: SignUpVerification.() -> Unit): SignUpVerification {
+        return SignUpVerification(rule).apply(block)
     }
 
 }

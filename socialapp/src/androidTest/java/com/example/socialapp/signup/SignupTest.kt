@@ -8,7 +8,7 @@ import org.junit.Test
 class SignupTest {
 
     @get:Rule
-    val signupTestRule= createAndroidComposeRule<MainActivity>()
+    val signupTestRule = createAndroidComposeRule<MainActivity>()
 
     @Test
     fun performSignUp() {
