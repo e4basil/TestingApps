@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "TestApps"
 //include ':alarmmanager'
 include ':socialapp'
+include ':mvvmtesting'
