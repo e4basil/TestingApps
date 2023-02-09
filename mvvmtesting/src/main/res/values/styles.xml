@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Toolbar -->
+    <style name="NewssterToolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="titleTextAppearance">@style/NewssterToolbarTitle</item>
+        <item name="elevation">4dp</item>
+    </style>
+
+    <style name="NewssterToolbarTitle" parent="TextAppearance.MaterialComponents.Headline6">
+<!--        <item name="fontFamily">@font/work_sans_semibold</item>-->
+    </style>
+
+
+    <!-- Retry button -->
+    <style name="NewssterButton" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">#ffa8c8</item>
+        <item name="strokeColor">#e91e63</item>
+        <item name="strokeWidth">0.8dp</item>
+        <item name="shapeAppearance">?attr/shapeAppearanceMediumComponent</item>
+    </style>
+
+    <!--Article Source, Article Date, Source in Article Item-->
+    <style name="Newsster.Overline" parent="TextAppearance.MaterialComponents.Overline">
+<!--        <item name="fontFamily">@font/work_sans_semibold</item>-->
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#e91e63</item>
+    </style>
+
+    <!--Title in Article Item -->
+    <style name="Newsster.Subtitle" parent="TextAppearance.MaterialComponents.Subtitle1">
+<!--        <item name="fontFamily">@font/work_sans_semibold</item>-->
+    </style>
+</resources>
